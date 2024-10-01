@@ -1,0 +1,46 @@
+<mat-toolbar *ngIf="!clientDashboardService.isUserOnClientDashboard" style="width: 100%;" color="primary">
+    <mat-toolbar-row >
+
+        <div>
+        <!-- Dropdown Button -->
+        <button mat-button ><mat-icon>home</mat-icon></button>
+
+        <button mat-button [matMenuTriggerFor]="crmMenu">CRM</button>
+        <button mat-button [routerLink]="['parent']" [routerLinkActive]="'active'">Parent</button>
+        <button mat-button [routerLink]="['tabs']" [routerLinkActive]="'active'">Tabs</button>
+        <button mat-button [routerLink]="['dynamic-form']" [routerLinkActive]="'active'">Dynamic Form</button>
+        <button mat-button [routerLink]="['viewchild-parent']" [routerLinkActive]="'active'">Child DOM Manipulation</button>
+        <button mat-button [routerLink]="['user-profile-form']" [routerLinkActive]="'active'">User Profile Form</button>
+        <button mat-button [routerLink]="['parent1']" [routerLinkActive]="'active'">Parent1</button>
+        <button mat-button [routerLink]="['ng-template-example']" [routerLinkActive]="'active'">ng-template-example</button>
+
+        <!-- Dropdown Button -->
+        <button mat-button [matMenuTriggerFor]="contentMenu">Content Usages</button>
+        <button mat-button [matMenuTriggerFor]="customDirectives">Custom Directives</button>
+
+
+    </div>
+
+    </mat-toolbar-row >
+    <mat-menu #crmMenu="matMenu">
+        <button mat-menu-item >Case Status</button>
+        <button mat-menu-item (click)="clientDashboardClicked()">Client Dashboard</button>
+    </mat-menu>
+    <mat-menu #contentMenu="matMenu">
+        <button mat-button routerLink="/CustomStylerParentComponent" routerLinkActive="'active'">Custom Styler</button>
+        <button mat-button routerLink="/dashboardForNotificationPanel" routerLinkActive="'active'">Dashboard For Notification Panel</button>
+        <button mat-button routerLink="/dashboardForWidgetComponent" routerLinkActive="'active'">Dashboard For Widget</button>
+        <button mat-button routerLink="/dynamicForm2" routerLinkActive="'active'">Dynamic Form</button>
+    </mat-menu>
+
+    <mat-menu  #customDirectives="matMenu">
+        <button mat-button routerLink="/tooltipDemo" routerLinkActive="'active'">ToolTip Demo</button>
+        <button mat-button routerLink="/ttClass" routerLinkActive="'active'">TT Class</button>
+        <button mat-button routerLink="/ttIf" routerLinkActive="'active'">TT If</button>
+    </mat-menu>
+</mat-toolbar> 
+
+
+<router-outlet *ngIf="!clientDashboardService.isUserOnClientDashboard"></router-outlet>
+
+<app-client-dashboard *ngIf="clientDashboardService.isUserOnClientDashboard"></app-client-dashboard>

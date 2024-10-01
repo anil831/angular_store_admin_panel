@@ -1,0 +1,14 @@
+/* .active{
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+button:active{
+    color: #3F51B5;
+
+} */
+.mat-toolbar .active {
+    background-color: #f1f1f1; /* or any other color you prefer */
+    color: #3F51B5; /* or any other color you prefer */
+}

@@ -1,0 +1,15 @@
+<div class="form-field">
+    <label [for]="id">{{ label }}</label>
+    <input
+      [id]="id"
+      [type]="type"
+      [placeholder]="placeholder"
+      [(ngModel)]="value"
+      (blur)="onTouched()"
+      (ngModelChange)="onModelChange($event)"
+      [attr.required]="required ? true : null"
+      [attr.minlength]="minlength || null"
+      [attr.maxlength]="maxlength || null"
+    />
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+  </div>

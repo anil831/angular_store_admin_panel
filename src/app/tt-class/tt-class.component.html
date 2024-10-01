@@ -1,0 +1,12 @@
+
+<h2> example of adding single classes appTtClass [appTtClass]="'buttonBgColor'"</h2>
+<button  [appTtClass]="'buttonBgColor'">click me</button>
+
+<h2> example of adding multiple classes with string type : appTtClass [appTtClass]="'buttonBgColor buttonColor'"</h2>
+<button  [appTtClass]="'buttonBgColor buttonColor'">click me</button>
+
+<h2> example of adding multiple classes with array of strings : appTtClass [appTtClass]="['buttonBgColor','buttonColor']"</h2>
+<button appTtClass [appTtClass]="['buttonBgColor','buttonColor']">click me</button>
+
+<h2>example of adding multiple classes with object type : appTtClass [appTtClass]={{"{'buttonBgColor':true,'buttonColor':true}"}}</h2>
+<button appTtClass [appTtClass]="{'buttonBgColor':true,'buttonColor':false}">click me</button>

@@ -1,0 +1,22 @@
+<app-tabs>
+    <app-tab [tabTitle]="'Tab 1'" [content]="tab1Content">
+   
+    </app-tab>
+    <app-tab [tabTitle]="'Tab 2'" [content]="tab2Content">
+
+    </app-tab>
+  </app-tabs>
+  
+
+  <ng-template #tab1Content>
+    <h2>Tab 1 Content</h2>
+    <p>Some text and components for Tab 1...</p>
+  </ng-template>
+  
+  <ng-template #tab2Content>
+    <h2>Tab 2 Content</h2>
+    <ul>
+      <li>Item 1 for Tab 2</li>
+      <li>Item 2 for Tab 2</li>
+    </ul>
+  </ng-template>

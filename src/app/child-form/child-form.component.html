@@ -1,0 +1,12 @@
+<div [formGroup]="formGroup">
+    <label [for]="fieldKey">{{ fieldLabel }}</label>
+    <input
+      [id]="fieldKey"
+      [type]="fieldType"
+      [placeholder]="fieldPlaceholder"
+      [formControlName]="fieldKey"
+    />
+    <div *ngIf="!formGroup.valid && formGroup.touched">
+      <span *ngIf="formGroup.controls[fieldKey]['errors']?.['required']">Field is required</span>
+    </div>
+  </div>

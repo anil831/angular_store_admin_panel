@@ -1,0 +1,6 @@
+<div *ngIf="showPanel" class="notification-panel">
+    <ng-content></ng-content>
+</div>
+<div *ngIf="!showPanel" class="no-notifications">
+    No notifications to display
+</div>

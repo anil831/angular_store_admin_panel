@@ -1,0 +1,14 @@
+<form (ngSubmit)="submitForm()" #form>
+    <app-child-form
+      *ngFor="let field of fields"
+      [fieldLabel]="field.label"
+      [fieldType]="field.type"
+      [fieldPlaceholder]="field.placeholder"
+      [fieldKey]="field.key"
+      [required]="field.required"
+      (formStatusChanged)="onFormStatusChanged($event)"
+    ></app-child-form>
+    <button type="submit" [disabled]="!isFormValid">Submit</button>
+  </form>
+  <p *ngIf="formSubmitted">Form Submitted Successfully!</p>
+  

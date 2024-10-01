@@ -1,0 +1,38 @@
+/* dashboard.component.css */
+
+:host {
+    display: block;
+    padding: 20px;
+}
+  
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+.notification {
+    background-color: #ffffff; /* White background for notifications */
+    border: 1px solid #d1d1d1; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px;
+    margin: 5px 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    align-items: center;
+  }
+  
+  .notification:before {
+    content: '\1F514'; /* unicode emoji*/
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  
+  .notification:first-child {
+    margin-top: 0;
+  }
+  
+  .notification:last-child {
+    margin-bottom: 0;
+  }

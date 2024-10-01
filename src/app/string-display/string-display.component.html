@@ -1,0 +1,37 @@
+<div>
+  <p>String Value: {{ stringValue }}</p>
+</div>
+
+<div>
+  <p>User Details:</p>
+  <ul>
+    <li>ID: {{ user?.id }}</li>
+    <li>Name: {{ user?.name }}</li>
+    <li>Email: {{ user?.email }}</li>
+  </ul>
+</div>
+
+
+<div>
+  <h2>object data:</h2>
+  <p>ID: {{ data.id }}</p>
+  <p>Name: {{ data.name }}</p>
+  <p>Description: {{ data.description }}</p>
+  <p>Category: {{ data.category }}</p>
+  <p>Active: {{ data.isActive }}</p>
+  <p>Created Date: {{ data.createdDate }}</p>
+  <p>Updated Date: {{ data.updatedDate }}</p>
+  <p>hobbies:</p>
+  <ul>
+    <li *ngFor="let hobbie of data.hobbies">
+      {{hobbie.id}} - {{hobbie.name}}
+    </li>
+  </ul>
+</div>
+
+<div>
+  <h2>Array Data: </h2>
+  <ul>
+    <li *ngFor="let item of items">{{ item.name }}</li>
+  </ul>
+</div>

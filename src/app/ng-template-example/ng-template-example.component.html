@@ -1,0 +1,107 @@
+<!-- ********** Using Structural Directives to render template **************-->
+
+<h2>ng-template with ngIf example :</h2>
+<button mat-button  (click)="isVisble=!isVisble">toggle visible</button>
+
+<!--Conditionally render template using ngIf structural directive-->
+<ng-template [ngIf]="isVisble">
+    <p>This content is only visible when isVisible is true.</p>
+</ng-template>
+
+
+<!--Conditionally render different templates using ngSwitch structural directive-->
+<h2>ng-template with ngSwitch example :</h2>
+
+<div [ngSwitch]="currentView">
+    <ng-template [ngSwitchCase]="'view1'">
+        <p>This is view 1</p>
+    </ng-template>
+
+    <ng-template [ngSwitchCase]="'view2'">
+        <p>This is view 2</p>
+    </ng-template>
+
+    <ng-template ngSwitchDefault>
+        <p>This is default view</p>
+    </ng-template>
+</div>
+
+<button mat-button (click)="currentView='view1'">View 1</button>
+<button mat-button (click)="currentView='view2'">View 2</button>
+<button mat-button (click)="currentView='default'">View 3</button>
+
+
+<h2>ng-template with ngFor example :</h2>
+
+<ul>
+   <ng-template ngFor let-movie [ngForOf]="movies" let-i="index" let-even="even" [ngForTrackBy]="trackById">
+    <li>{{movie.title}} - {{movie.director}}</li>
+   </ng-template>
+   
+</ul>
+
+
+
+
+<h2>ng-template with if else condition</h2>
+
+<button mat-button (click)="showContent=!showContent">Toggle showContent</button>
+
+
+<!--Refering to template that is assigned to variable noContent-->
+<div *ngIf="showContent; else noContent">
+    <p>showContent is : {{showContent}}</p>
+</div>
+
+<!--Assigning ng-template to a template refernce variable noContent-->
+<ng-template #noContent>
+    <p>No content available</p>
+</ng-template>
+
+
+
+
+
+
+<h2>ng-template with *ngTemplateOutlet to render content dynamically:</h2>
+
+<ng-template #myTemplate>
+    <p>This content is inserted using ngTemplateOutlet.</p>
+</ng-template>
+  
+<!--Using template reference variable myTemplate with *ngTemplateOutlet directive to insert the content of the template into the DOM-->
+<ng-container *ngTemplateOutlet="myTemplate"></ng-container>
+  
+
+
+<h2>Access ng-template in component using viewChild , TemplateRef and ViewContainerRef without specifying location. default to render template bottom of the component content</h2>
+
+<ng-template #sampleTemplate1>
+    <p>Sample template content 1</p>
+</ng-template>
+
+
+<h2>Bind *ngTemplateOutlet structural directive to componet property</h2>
+
+<button mat-button (click)="switchTemplate()">Switch Template</button>
+
+<ng-template #firstTemplate>
+    <p>First Template content</p>
+</ng-template>
+<ng-template #secondTemplate>
+    <p>Second Template content</p>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="currentTemplate"></ng-container>
+
+<br><br>
+
+<h2>ViewContainerRef as type of ViewChild Property</h2>
+<ng-template #dynamicTemplate let-data="data">
+    <div>
+      <h2>{{ data.title }}</h2>
+      <p>{{ data.content }}</p>
+    </div>
+</ng-template>
+
+<div #container></div>

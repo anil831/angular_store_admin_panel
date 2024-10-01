@@ -1,0 +1,14 @@
+<div style="margin: 50px;">
+    <p>some text</p>
+    <!-- This applies the directive to the button element and sets the appTooltip property of the directive to "This is a tooltip!". -->
+
+    <!-- This is a shorthand for binding a string literal to the directive's input property -->
+
+    <!--Direct string binding-->
+    <!-- <button  appTooltip="This is a tooltip!">Hover over me!</button> -->
+
+    <!--Angular property binding-->
+    <button appTooltip [appTooltip]="'This is a tooltip!'">Hover over me!</button>
+
+</div>
+  

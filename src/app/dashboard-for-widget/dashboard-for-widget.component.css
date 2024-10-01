@@ -1,0 +1,27 @@
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+}
+
+.widget-content {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.highlight {
+    background-color: #f9f9f9;
+    border-left: 5px solid #ff5722;
+}
+
+/* Light background and orange border for highlighted widgets */
+.normal {
+    background-color: #ffffff;
+    border-left: 5px solid #2196f3;
+}
+
+/* White background and blue border for normal widgets */
